@@ -1,0 +1,78 @@
+======================================================================
+BENCHMARK RETRIEVAL REPORT — DAY 7 LAB
+======================================================================
+Chiến lược Chunking  : HeadingChunker
+Embedding Backend    : sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Tổng số tài liệu gốc : 6 files
+Tổng số chunks nạp   : 138 chunks
+----------------------------------------------------------------------
+
+[QUERY 1] Người mua có bao nhiêu ngày để gửi yêu cầu trả hàng/hoàn tiền kể từ khi đơn hàng giao thành công?
+  * Gold Doc ID      : ['quy-dinh-chung-tra-hang-hoan-tien', 'chinh-sach-tra-hang-hoan-tien']
+  * Gold Answer      : 15 ngày kể từ lúc đơn hàng được cập nhật giao hàng thành công; riêng thực phẩm tươi sống và đông lạnh là 24 giờ.
+  * Top-3 Retrieved Chunks:
+    1. [MATCH] score=+0.7894 | doc=quy-dinh-chung-tra-hang-hoan-tien | id=quy-dinh-chung-tra-hang-hoan-tien#4
+       preview: "1.2. Thời gian tối đa để gửi yêu cầu trả hàng hoàn tiền cho Shopee + 20 ngày kể từ lúc đơn hàng được cập nhật trạng thái ‘Lấy hàng thành côn..."
+    2. [MATCH] score=+0.7788 | doc=quy-dinh-chung-tra-hang-hoan-tien | id=quy-dinh-chung-tra-hang-hoan-tien#3
+       preview: "1.2. Thời gian tối đa để gửi yêu cầu trả hàng hoàn tiền cho Shopee Thời gian để Shopee tiếp nhận yêu cầu Trả hàng/Hoàn tiền từ bạn sẽ là:  Đ..."
+    3. [MATCH] score=+0.7517 | doc=quy-dinh-chung-tra-hang-hoan-tien | id=quy-dinh-chung-tra-hang-hoan-tien#5
+       preview: "1.2. Thời gian tối đa để gửi yêu cầu trả hàng hoàn tiền cho Shopee Yêu cầu Trả hàng/Hoàn tiền của bạn sẽ được phản hồi trong vòng 3-5 ngày l..."
+  => Đúng file gold trong top-3       : CO (cach cham ngay tho)
+  => Ngu canh top-3 chua dap an ('15 ngày') : CO (cach cham dung theo docs/SCORING.md)
+
+[QUERY 2] Khi hệ thống ghi nhận đã trả hàng thành công nhưng Shop chưa nhận được hàng, Người Bán phải phản hồi Shopee trong bao lâu?
+  * Metadata filter  : {'audience': 'seller'}
+  * Gold Doc ID      : ['quan-ly-don-tra-hang-hoan-tien-seller']
+  * Gold Answer      : Trong vòng 2 ngày, kể từ ngày hệ thống cập nhật trả hàng thành công.
+  * Top-3 Retrieved Chunks:
+    1. [MATCH] score=+0.8012 | doc=quan-ly-don-tra-hang-hoan-tien-seller | id=quan-ly-don-tra-hang-hoan-tien-seller#8
+       preview: "1. Hệ thống ghi nhận đã trả hàng thành công nhưng Shop chưa nhận được hàng hoặc hàng hoàn về gặp vấn đề (vỡ/ hư hại/thiếu hàng/ không phải h..."
+    2. [MATCH] score=+0.7519 | doc=quan-ly-don-tra-hang-hoan-tien-seller | id=quan-ly-don-tra-hang-hoan-tien-seller#7
+       preview: "C. Hướng dẫn Phản hồi đến Shopee khi chưa nhận được hàng hoàn hoặc hàng hoàn gặp vấn đề Trường hợp  Thời điểm phản hồi  Hạn phản hối..."
+    3. [MATCH] score=+0.6983 | doc=quan-ly-don-tra-hang-hoan-tien-seller | id=quan-ly-don-tra-hang-hoan-tien-seller#9
+       preview: "2. Hệ thống ghi nhận Người Mua đã gửi hàng cho ĐVVC nhưng Shop chưa nhận được hàng Sau 2 ngày kể từ ngày hệ thống cập nhật Người mua đã gửi..."
+  => Đúng file gold trong top-3       : CO (cach cham ngay tho)
+  => Ngu canh top-3 chua dap an ('2 ngày') : CO (cach cham dung theo docs/SCORING.md)
+
+[QUERY 3] Nếu người mua nhận hoàn tiền qua Ví ShopeePay, sau khi Shopee chấp nhận hoàn tiền thì mất bao lâu để nhận được tiền?
+  * Gold Doc ID      : ['thoi-gian-nhan-tien-hoan']
+  * Gold Answer      : 24 giờ, với điều kiện Ví ShopeePay vẫn hoạt động bình thường.
+  * Top-3 Retrieved Chunks:
+    1. [MATCH] score=+0.7486 | doc=thoi-gian-nhan-tien-hoan | id=thoi-gian-nhan-tien-hoan#1
+       preview: "Sau khi gửi trả hàng, bạn sẽ nhận được thông báo xác nhận hoàn tiền qua mục Thông báo > Cập nhật đơn hàng trên ứng dụng Shopee, sau đó tiền..."
+    2. [MATCH] score=+0.7237 | doc=thoi-gian-nhan-tien-hoan | id=thoi-gian-nhan-tien-hoan#14
+       preview: "24 giờ Đối với hình thức hoàn tiền về Tài khoản Ngân hàng, bạn cần đảm bảo nhập đúng thông tin chủ tài khoản, số tài khoản và tên ngân hàng..."
+    3. [MATCH] score=+0.7223 | doc=thoi-gian-nhan-tien-hoan | id=thoi-gian-nhan-tien-hoan#18
+       preview: "24 giờ Số tiền thanh toán bằng phương thức thanh toán khác: hoàn về Ví ShopeePay (nếu trước đó bạn chon thanh toán bằng Ví ShopeePay) hoặc S..."
+  => Đúng file gold trong top-3       : CO (cach cham ngay tho)
+  => Ngu canh top-3 chua dap an ('24 giờ') : CO (cach cham dung theo docs/SCORING.md)
+
+[QUERY 4] Khi đóng gói hàng hoàn trả, người mua có được dán/viết thông tin trả hàng lên hộp của nhà sản xuất không?
+  * Gold Doc ID      : ['cach-dong-goi-hang-hoan-tra']
+  * Gold Answer      : Không — không được dán/viết lên hộp của nhà sản xuất; cần dùng hộp vận chuyển bên ngoài để bảo vệ sản phẩm và hộp gốc.
+  * Top-3 Retrieved Chunks:
+    1. [MATCH] score=+0.6858 | doc=cach-dong-goi-hang-hoan-tra | id=cach-dong-goi-hang-hoan-tra#3
+       preview: "Bạn cần sử dụng hộp vận chuyển bên ngoài để đảm bảo sản phẩm và hộp của nhà sản xuất không bị hư hại.  Luôn ghi hình lại quá..."
+    2.         score=+0.6721 | doc=chinh-sach-tra-hang-hoan-tien | id=chinh-sach-tra-hang-hoan-tien#39
+       preview: "6. YÊU CẦU ĐỐI VỚI SẢN PHẨM HOÀN TRẢ Để hạn chế các rủi ro phát sinh liên quan đến việc hoàn trả Sản Phẩm, Người Mua lưu ý cần phải đóng gói..."
+    3.         score=+0.6439 | doc=quy-dinh-chung-tra-hang-hoan-tien | id=quy-dinh-chung-tra-hang-hoan-tien#12
+       preview: "1.3. Lý do Trả hàng/Hoàn tiền Đổi ý (Sản phẩm còn nguyên tem, nhãn mác, bao bì)  Chỉ áp dụng khi sản phẩm trả còn nguyên trạng ban đầu: chưa..."
+  => Đúng file gold trong top-3       : CO (cach cham ngay tho)
+  => Ngu canh top-3 chua dap an ('hộp của nhà sản xuất') : KHONG (cach cham dung theo docs/SCORING.md)
+
+[QUERY 5] Sau khi người mua gửi yêu cầu Trả hàng/Hoàn tiền, Shopee phản hồi kết quả xử lý trong khoảng thời gian nào?
+  * Gold Doc ID      : ['huong-dan-gui-yeu-cau-tra-hang']
+  * Gold Answer      : Khoảng 3-5 ngày làm việc.
+  * Top-3 Retrieved Chunks:
+    1.         score=+0.8255 | doc=chinh-sach-tra-hang-hoan-tien | id=chinh-sach-tra-hang-hoan-tien#37
+       preview: "5. QUYỀN CỦA NGƯỜI BÁN Người Bán cần gửi phản hồi trong vòng 02 ngày lịch (hoặc thời hạn khác được quy định bởi Shopee trong từng thời điểm)..."
+    2.         score=+0.8174 | doc=chinh-sach-tra-hang-hoan-tien | id=chinh-sach-tra-hang-hoan-tien#58
+       preview: "9.6.  Trường hợp Người Mua gửi yêu cầu trả hàng/hoàn tiền sau khi Shopee đã thanh toán cho Người Bán và được Shopee đồng ý hoàn tiền, Shopee..."
+    3.         score=+0.8117 | doc=chinh-sach-tra-hang-hoan-tien | id=chinh-sach-tra-hang-hoan-tien#57
+       preview: "9.3.  Shopee sẽ tự động hoàn tiền cho Người Mua trong trường hợp Người Bán không phản hồi trong khoảng thời gian đã được quy định trướ..."
+  => Đúng file gold trong top-3       : KHONG (cach cham ngay tho)
+  => Ngu canh top-3 chua dap an ('3 - 5 ngày') : KHONG (cach cham dung theo docs/SCORING.md)
+
+======================================================================
+TONG KET: 4/5 dung doc_id (cach cham ngay tho, de bi thoi phong)
+TONG KET: 3/5 THUC SU chua dap an trong ngu canh (cach cham dung)
